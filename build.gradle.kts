@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.3.31"
     `maven-publish`
+//    `java-library`
 }
 
 group = "io.pnyx"
@@ -32,6 +33,7 @@ tasks.wrapper {
 publishing {
     publications {
         create<MavenPublication>("default") {
+            from(components["java"])
         }
     }
 }
